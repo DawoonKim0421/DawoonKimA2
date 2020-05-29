@@ -3,7 +3,7 @@ Name: Da Woon Kim
 Date: 20th May 2020
 Brief Project Description: This program displays songs in the CSV file, indicating that you have completed learning
                             or need to learn from any song. Users can also add new songs to the list and learn them.
-GitHub URL:
+GitHub URL: https://github.com/DawoonKim0421/DawoonKimA2.git
 """
 
 from kivy.app import App
