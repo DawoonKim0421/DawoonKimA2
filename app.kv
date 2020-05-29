@@ -1,0 +1,75 @@
+# create your Kivy layout in the kv language here
+BoxLayout:
+    orientation: 'horizontal'
+    padding: 7
+    BoxLayout:
+        size_hint_x: 0.4
+        padding: 7
+        orientation: 'vertical'
+        Label:
+            text: "Sort by:"
+
+        Spinner:
+            id: sort_option
+            text: 'Title'
+            values: ('Title', 'Artist', 'Year', 'Require')
+            on_text: app.sorting(self.text)
+
+
+        Label:
+            text: "Add New Song..."
+
+        Label:
+            text: "Title :"
+
+        TextInput:
+            id: title_fill
+            font_size: 18
+            multiline: False
+            write_tab: False
+
+        Label:
+            text: "Artist :"
+
+        TextInput:
+            id: artist_fill
+            font_size: 18
+            multiline: False
+            write_tab: False
+
+        Label:
+            text: "Year :"
+
+        TextInput:
+            id: year_fill
+            font_size: 18
+            multiline: False
+            write_tab: False
+
+        Button:
+            text: "Add Song"
+            on_release: app.add_song()
+
+        Button:
+            text: "Clear"
+            on_release: app.clear_all()
+
+    BoxLayout:
+        size_hint_x: 1
+        orientation: 'vertical'
+        Label:
+            id: title_learned
+            size_hint_y: 0.12
+            text: "To learn: y, Learned: x"
+
+        ScrollView:
+            size_hint_y: 1
+            GridLayout:
+                id: all_song
+                size_hint_x: 1
+                cols: 1
+
+        Label:
+            size_hint_y: 0.1
+            id: program_detail
+            text: "SongToLearn App is starting"
